@@ -69,12 +69,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tu Blog">
-<meta property="og:url" content="http://zwjmosquito.github.io/index.html">
+<meta name="description" content="Question Given a binary tree, return the inorder traversal of its nodes’ values.  Solution/Code(Python)1234567891011121314151617181920212223&quot;&quot;&quot;Definition of TreeNode:class TreeNode:    def __init__(se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[LintCode&#x2F;LeetCode] Binary Tree Inorder Traversal">
+<meta property="og:url" content="http://zwjmosquito.github.io/2017/09/26/LintCode-LeetCode-Binary-Tree-Inorder-Traversal/index.html">
 <meta property="og:site_name" content="Tu Blog">
+<meta property="og:description" content="Question Given a binary tree, return the inorder traversal of its nodes’ values.  Solution/Code(Python)1234567891011121314151617181920212223&quot;&quot;&quot;Definition of TreeNode:class TreeNode:    def __init__(se">
+<meta property="og:updated_time" content="2017-09-28T02:44:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tu Blog">
+<meta name="twitter:title" content="[LintCode&#x2F;LeetCode] Binary Tree Inorder Traversal">
+<meta name="twitter:description" content="Question Given a binary tree, return the inorder traversal of its nodes’ values.  Solution/Code(Python)1234567891011121314151617181920212223&quot;&quot;&quot;Definition of TreeNode:class TreeNode:    def __init__(se">
 
 
 
@@ -104,13 +108,13 @@
 
 
 
-  <link rel="canonical" href="http://zwjmosquito.github.io/"/>
+  <link rel="canonical" href="http://zwjmosquito.github.io/2017/09/26/LintCode-LeetCode-Binary-Tree-Inorder-Traversal/"/>
 
 
 
 
 
-  <title>Tu Blog</title>
+  <title>[LintCode/LeetCode] Binary Tree Inorder Traversal | Tu Blog</title>
   
 
 
@@ -129,8 +133,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -203,9 +206,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -235,9 +238,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/26/LintCode-LeetCode-Binary-Tree-Inorder-Traversal/" itemprop="url">[LintCode/LeetCode] Binary Tree Inorder Traversal</a></h1>
+          <h1 class="post-title" itemprop="name headline">[LintCode/LeetCode] Binary Tree Inorder Traversal</h1>
         
 
         <div class="post-meta">
@@ -287,9 +288,7 @@
       
 
       
-        
-          
-            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><blockquote>
+        <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><blockquote>
 <p>Given a binary tree, return the inorder traversal of its nodes’ values.</p>
 </blockquote>
 <h1 id="Solution-Code-Python"><a href="#Solution-Code-Python" class="headerlink" title="Solution/Code(Python)"></a>Solution/Code(Python)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Definition of TreeNode:</span></div><div class="line"><span class="string">class TreeNode:</span></div><div class="line"><span class="string">    def __init__(self,val):</span></div><div class="line"><span class="string">        self.val = val</span></div><div class="line"><span class="string">        self.left, self.right = None, None</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    @param: root: A Tree</span></div><div class="line"><span class="string">    @return: Inorder in ArrayList which contains node values.</span></div><div class="line"><span class="string">    """</span></div><div class="line">    inordered = []</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inorderTraversal</span><span class="params">(self, root)</span>:</span></div><div class="line">        <span class="comment"># write your code here</span></div><div class="line">        <span class="keyword">if</span> root != <span class="keyword">None</span>:</div><div class="line">            self.inorderTraversal(root.left)</div><div class="line">            self.inordered.append(root.val)</div><div class="line">            self.inorderTraversal(root.right)</div><div class="line"></div><div class="line">        <span class="keyword">return</span> Solution.inordered</div><div class="line"> </div></pre></td></tr></table></figure>
@@ -306,8 +305,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Definition of TreeNode:</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, val)</span>:</span></div><div class="line">        this.val = val</div><div class="line">        this.left, this.right = <span class="keyword">None</span>, <span class="keyword">None</span></div></pre></td></tr></table></figure>
 <p>The code declares a class called TreeNode, and the function <strong>init</strong> shows how we define an instance of the class. The following is an example defining class TreeNode which contains a function getValue.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,val)</span>:</span></div><div class="line">        self.val = val</div><div class="line">        self.left, self.right = <span class="keyword">None</span>, <span class="keyword">None</span></div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getValue</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.val</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    mytree = TreeNode(<span class="number">5</span>)</div><div class="line">    myleft = TreeNode(<span class="number">3</span>)</div><div class="line">    mytree.left = myleft</div><div class="line">    <span class="keyword">print</span> mytree.getValue()</div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
@@ -324,140 +321,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zwjmosquito.github.io/2017/09/25/LintCode-LeetCode-Identical-Binary-Tree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenji Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tu Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/25/LintCode-LeetCode-Identical-Binary-Tree/" itemprop="url">[LintCode/LeetCode] Identical Binary Tree</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T21:38:59-05:00">
-                2017-09-25
-              </time>
+              <a href="/2017/09/25/LintCode-LeetCode-Identical-Binary-Tree/" rel="next" title="[LintCode/LeetCode] Identical Binary Tree">
+                <i class="fa fa-chevron-left"></i> [LintCode/LeetCode] Identical Binary Tree
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><blockquote>
-<p>Check if two binary trees are identical. Identical means the two binary trees have the same structure and every identical position has the same value.</p>
-</blockquote>
-<h1 id="Solution-Code-Python"><a href="#Solution-Code-Python" class="headerlink" title="Solution/Code(Python)"></a>Solution/Code(Python)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Definition of TreeNode:</span></div><div class="line"><span class="string">class TreeNode:</span></div><div class="line"><span class="string">    def __init__(self, val):</span></div><div class="line"><span class="string">        this.val = val</span></div><div class="line"><span class="string">        this.left, this.right = None, None</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    @param: a: the root of binary tree a.</span></div><div class="line"><span class="string">    @param: b: the root of binary tree b.</span></div><div class="line"><span class="string">    @return: true if they are identical, or false.</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isIdentical</span><span class="params">(self, a, b)</span>:</span></div><div class="line">        <span class="comment"># write your code here</span></div><div class="line">        <span class="keyword">if</span> a == <span class="keyword">None</span> <span class="keyword">and</span> b == <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">        <span class="keyword">if</span> (a == <span class="keyword">None</span> <span class="keyword">and</span> b!= <span class="keyword">None</span>) <span class="keyword">or</span> (a != <span class="keyword">None</span> <span class="keyword">and</span> b == <span class="keyword">None</span>):</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">        <span class="keyword">if</span> a.val != b.val:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">        <span class="keyword">return</span> self.isIdentical(a.left, b.left) <span class="keyword">and</span> self.isIdentical(a.right,b.right)        </div></pre></td></tr></table></figure>
-<h1 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h1><ul>
-<li>This is a basic binary tree problem. The idea is based on recursion;</li>
-<li>Big problem: identity of two trees –&gt; Small problem: identity of root, left child, right child;</li>
-<li>Stop condition:<br>– two nodes are not the same, return False<br>– reach leaf node, return True</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -467,138 +352,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zwjmosquito.github.io/2017/09/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenji Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tu Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/24/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-24T22:36:47-05:00">
-                2017-09-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -606,6 +364,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -626,8 +388,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">Wenji Zhang</p>
@@ -670,6 +441,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-Code-Python"><span class="nav-number">2.</span> <span class="nav-text">Solution/Code(Python)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Note"><span class="nav-number">3.</span> <span class="nav-text">Note</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
