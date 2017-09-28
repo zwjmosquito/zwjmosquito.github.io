@@ -171,7 +171,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -247,7 +247,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T22:30:54-05:00">
                 2017-09-26
@@ -292,13 +292,13 @@
             <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><blockquote>
 <p>Given a binary tree, return the inorder traversal of its nodes’ values.</p>
 </blockquote>
-<h1 id="Solution-Code-Python"><a href="#Solution-Code-Python" class="headerlink" title="Solution/Code(Python)"></a>Solution/Code(Python)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Definition of TreeNode:</span></div><div class="line"><span class="string">class TreeNode:</span></div><div class="line"><span class="string">    def __init__(self,val):</span></div><div class="line"><span class="string">        self.val = val</span></div><div class="line"><span class="string">        self.left, self.right = None, None</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    @param: root: A Tree</span></div><div class="line"><span class="string">    @return: Inorder in ArrayList which contains node values.</span></div><div class="line"><span class="string">    """</span></div><div class="line">    inordered = []</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inorderTraversal</span><span class="params">(self, root)</span>:</span></div><div class="line">        <span class="comment"># write your code here</span></div><div class="line">        <span class="keyword">if</span> root != <span class="keyword">None</span>:</div><div class="line">            self.inorderTraversal(root.left)</div><div class="line">            self.inordered.append(root.val)</div><div class="line">            self.inorderTraversal(root.right)</div><div class="line"></div><div class="line">        <span class="keyword">return</span> Solution.inordered</div><div class="line"> </div></pre></td></tr></table></figure>
+<h1 id="Solution-Code-Python"><a href="#Solution-Code-Python" class="headerlink" title="Solution/Code(Python)"></a>Solution/Code(Python)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Definition of TreeNode:</span></div><div class="line"><span class="string">class TreeNode:</span></div><div class="line"><span class="string">    def __init__(self,val):</span></div><div class="line"><span class="string">        self.val = val</span></div><div class="line"><span class="string">        self.left, self.right = None, None</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    @param: root: A Tree</span></div><div class="line"><span class="string">    @return: Inorder in ArrayList which contains node values.</span></div><div class="line"><span class="string">    """</span></div><div class="line">    inordered = []</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inorderTraversal</span><span class="params">(self, root)</span>:</span></div><div class="line">        <span class="comment"># write your code here</span></div><div class="line">        <span class="keyword">if</span> root != <span class="keyword">None</span>:</div><div class="line">            self.inorderTraversal(root.left)</div><div class="line">            Solution.inordered.append(root.val)</div><div class="line">            self.inorderTraversal(root.right)</div><div class="line"></div><div class="line">        <span class="keyword">return</span> Solution.inordered</div><div class="line"> </div></pre></td></tr></table></figure>
 <h1 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h1><ul>
-<li><p>There are three ways to traversal a binary tree, inorder, preorder and postorder;<br>– inorder: Left, Root, Right. It starts from the very left leaf node.<br>– preorder: Root, Left, Right. It starts from the root.<br>– postorder: Left, Right, Root. It stars from the very left leaf node.</p>
+<li><p>There are three ways to traverse a binary tree, inorder, preorder and postorder;<br>– inorder: Left, Root, Right. It starts from the very left leaf node.<br>– preorder: Root, Left, Right. It starts from the root.<br>– postorder: Left, Right, Root. It stars from the very left leaf node.</p>
 </li>
 <li><p>The algorithm is based on recursion. Big problem: inorder traversal a binary tree –&gt; Small problem: traversing left subtree, root, rightsubtree.</p>
 </li>
-<li><p>A side note for this problem is using Solution.inordered. Since we need to use a list to store the node it has traversed, my first thought is define a global list (naive!!). Apparently I don’t know much about data structure, I didn’t even think about the ‘class Solution:’ appearing in every LintCode problem. But after I set inordered to be a global string and try to append it in the recursion, it shows an error that ‘inordered’ is not defined.</p>
+<li><p>A side note for this problem is using Solution.inordered (or self.inordered). Since we need to use a list to store the node it has traversed, my first thought is define a global list (naive!!). Apparently I don’t know much about data structure, I didn’t even think about the ‘class Solution:’ appearing in every LintCode problem. But after I set inordered to be a global string and try to append it in the recursion, it shows an error that ‘inordered’ is not defined.</p>
 </li>
 <li>I figured one way to achieve that is use Solution.inordered. ‘inordered’ is treated as part of the class Solution.</li>
 <li>An example of class is the definition of tree.</li>
@@ -382,7 +382,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T21:38:59-05:00">
                 2017-09-25
@@ -510,7 +510,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-24T22:36:47-05:00">
                 2017-09-24
@@ -642,7 +642,7 @@
               <a href="/archives/">
             
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -697,7 +697,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 
