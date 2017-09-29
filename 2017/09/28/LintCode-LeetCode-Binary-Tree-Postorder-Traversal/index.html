@@ -69,16 +69,16 @@
 
 
 
-<meta name="description" content="Question Check if two binary trees are identical. Identical means the two binary trees have the same structure and every identical position has the same value.  Solution/Code(Python)123456789101112131">
+<meta name="description" content="Question Given a binary tree, return the postorder traversal of its nodes’ values.  Solution/Code(Python)12345678910111213141516171819202122&quot;&quot;&quot;Definition of TreeNode:class TreeNode:    def __init__(se">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LintCode&#x2F;LeetCode] Identical Binary Tree">
-<meta property="og:url" content="http://zwjmosquito.github.io/2017/09/25/LintCode-LeetCode-Identical-Binary-Tree/index.html">
+<meta property="og:title" content="[LintCode&#x2F;LeetCode] Binary Tree Postorder Traversal">
+<meta property="og:url" content="http://zwjmosquito.github.io/2017/09/28/LintCode-LeetCode-Binary-Tree-Postorder-Traversal/index.html">
 <meta property="og:site_name" content="Tu Blog">
-<meta property="og:description" content="Question Check if two binary trees are identical. Identical means the two binary trees have the same structure and every identical position has the same value.  Solution/Code(Python)123456789101112131">
-<meta property="og:updated_time" content="2017-09-26T02:57:02.000Z">
+<meta property="og:description" content="Question Given a binary tree, return the postorder traversal of its nodes’ values.  Solution/Code(Python)12345678910111213141516171819202122&quot;&quot;&quot;Definition of TreeNode:class TreeNode:    def __init__(se">
+<meta property="og:updated_time" content="2017-09-29T03:38:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LintCode&#x2F;LeetCode] Identical Binary Tree">
-<meta name="twitter:description" content="Question Check if two binary trees are identical. Identical means the two binary trees have the same structure and every identical position has the same value.  Solution/Code(Python)123456789101112131">
+<meta name="twitter:title" content="[LintCode&#x2F;LeetCode] Binary Tree Postorder Traversal">
+<meta name="twitter:description" content="Question Given a binary tree, return the postorder traversal of its nodes’ values.  Solution/Code(Python)12345678910111213141516171819202122&quot;&quot;&quot;Definition of TreeNode:class TreeNode:    def __init__(se">
 
 
 
@@ -108,13 +108,13 @@
 
 
 
-  <link rel="canonical" href="http://zwjmosquito.github.io/2017/09/25/LintCode-LeetCode-Identical-Binary-Tree/"/>
+  <link rel="canonical" href="http://zwjmosquito.github.io/2017/09/28/LintCode-LeetCode-Binary-Tree-Postorder-Traversal/"/>
 
 
 
 
 
-  <title>[LintCode/LeetCode] Identical Binary Tree | Tu Blog</title>
+  <title>[LintCode/LeetCode] Binary Tree Postorder Traversal | Tu Blog</title>
   
 
 
@@ -221,7 +221,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zwjmosquito.github.io/2017/09/25/LintCode-LeetCode-Identical-Binary-Tree/">
+    <link itemprop="mainEntityOfPage" href="http://zwjmosquito.github.io/2017/09/28/LintCode-LeetCode-Binary-Tree-Postorder-Traversal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wenji Zhang">
@@ -238,7 +238,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[LintCode/LeetCode] Identical Binary Tree</h1>
+          <h1 class="post-title" itemprop="name headline">[LintCode/LeetCode] Binary Tree Postorder Traversal</h1>
         
 
         <div class="post-meta">
@@ -250,8 +250,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T21:38:59-05:00">
-                2017-09-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-28T22:34:56-05:00">
+                2017-09-28
               </time>
             
 
@@ -289,13 +289,11 @@
 
       
         <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><blockquote>
-<p>Check if two binary trees are identical. Identical means the two binary trees have the same structure and every identical position has the same value.</p>
+<p>Given a binary tree, return the postorder traversal of its nodes’ values.</p>
 </blockquote>
-<h1 id="Solution-Code-Python"><a href="#Solution-Code-Python" class="headerlink" title="Solution/Code(Python)"></a>Solution/Code(Python)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Definition of TreeNode:</span></div><div class="line"><span class="string">class TreeNode:</span></div><div class="line"><span class="string">    def __init__(self, val):</span></div><div class="line"><span class="string">        this.val = val</span></div><div class="line"><span class="string">        this.left, this.right = None, None</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    @param: a: the root of binary tree a.</span></div><div class="line"><span class="string">    @param: b: the root of binary tree b.</span></div><div class="line"><span class="string">    @return: true if they are identical, or false.</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isIdentical</span><span class="params">(self, a, b)</span>:</span></div><div class="line">        <span class="comment"># write your code here</span></div><div class="line">        <span class="keyword">if</span> a == <span class="keyword">None</span> <span class="keyword">and</span> b == <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">        <span class="keyword">if</span> (a == <span class="keyword">None</span> <span class="keyword">and</span> b!= <span class="keyword">None</span>) <span class="keyword">or</span> (a != <span class="keyword">None</span> <span class="keyword">and</span> b == <span class="keyword">None</span>):</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">        <span class="keyword">if</span> a.val != b.val:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">        <span class="keyword">return</span> self.isIdentical(a.left, b.left) <span class="keyword">and</span> self.isIdentical(a.right,b.right)        </div></pre></td></tr></table></figure>
+<h1 id="Solution-Code-Python"><a href="#Solution-Code-Python" class="headerlink" title="Solution/Code(Python)"></a>Solution/Code(Python)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Definition of TreeNode:</span></div><div class="line"><span class="string">class TreeNode:</span></div><div class="line"><span class="string">    def __init__(self,val):</span></div><div class="line"><span class="string">        self.val = val</span></div><div class="line"><span class="string">        self.left, self.right = None, None</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    @param: root: A Tree</span></div><div class="line"><span class="string">    @return: Postorder in ArrayList which contains node values.</span></div><div class="line"><span class="string">    """</span></div><div class="line">    PostOrdered = []</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">postorderTraversal</span><span class="params">(self, root)</span>:</span></div><div class="line">        <span class="comment"># write your code here</span></div><div class="line">        <span class="keyword">if</span> root != <span class="keyword">None</span>:</div><div class="line">            self.postorderTraversal(root.left)</div><div class="line">            self.postorderTraversal(root.right)</div><div class="line">            Solution.PostOrdered.append(root.val)</div><div class="line">        <span class="keyword">return</span> Solution.PostOrdered</div><div class="line"> </div></pre></td></tr></table></figure>
 <h1 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h1><ul>
-<li>This is a basic binary tree problem. The idea is based on recursion;</li>
-<li>Big problem: identity of two trees –&gt; Small problem: identity of root, left child, right child;</li>
-<li>Stop condition:<br>– two nodes are not the same, return False<br>– reach leaf node, return True</li>
+<li>Recall that postorder traversal is: Left, Right, Root. It stars from the very left leaf node. The code is very similar as the inorder traversal.</li>
 </ul>
 
       
@@ -321,8 +319,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/24/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/09/26/LintCode-LeetCode-Binary-Tree-Inorder-Traversal/" rel="next" title="[LintCode/LeetCode] Binary Tree Inorder Traversal">
+                <i class="fa fa-chevron-left"></i> [LintCode/LeetCode] Binary Tree Inorder Traversal
               </a>
             
           </div>
@@ -330,10 +328,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/26/LintCode-LeetCode-Binary-Tree-Inorder-Traversal/" rel="prev" title="[LintCode/LeetCode] Binary Tree Inorder Traversal">
-                [LintCode/LeetCode] Binary Tree Inorder Traversal <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
