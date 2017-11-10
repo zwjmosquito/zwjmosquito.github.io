@@ -69,16 +69,16 @@
 
 
 
-<meta name="description" content="Question Check if two binary trees are identical. Identical means the two binary trees have the same structure and every identical position has the same value.  Solution/Code(Python)123456789101112131">
+<meta name="description" content="Question Given an integer array, sort it in ascending order. Use selection sort, bubble sort, insertion sort or any O(n^2) algorithm.  Solution/Code(Python)12345678910111213141516171819202122232425262">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LintCode&#x2F;LeetCode] Identical Binary Tree">
-<meta property="og:url" content="http://zwjmosquito.github.io/2017/09/25/LintCode-LeetCode-Identical-Binary-Tree/index.html">
+<meta property="og:title" content="[LintCode&#x2F;LeetCode]Sort Integers">
+<meta property="og:url" content="http://zwjmosquito.github.io/2017/11/10/LintCode-LeetCode-Sort-Integers/index.html">
 <meta property="og:site_name" content="Tu Blog">
-<meta property="og:description" content="Question Check if two binary trees are identical. Identical means the two binary trees have the same structure and every identical position has the same value.  Solution/Code(Python)123456789101112131">
-<meta property="og:updated_time" content="2017-09-26T02:57:02.000Z">
+<meta property="og:description" content="Question Given an integer array, sort it in ascending order. Use selection sort, bubble sort, insertion sort or any O(n^2) algorithm.  Solution/Code(Python)12345678910111213141516171819202122232425262">
+<meta property="og:updated_time" content="2017-11-10T19:41:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LintCode&#x2F;LeetCode] Identical Binary Tree">
-<meta name="twitter:description" content="Question Check if two binary trees are identical. Identical means the two binary trees have the same structure and every identical position has the same value.  Solution/Code(Python)123456789101112131">
+<meta name="twitter:title" content="[LintCode&#x2F;LeetCode]Sort Integers">
+<meta name="twitter:description" content="Question Given an integer array, sort it in ascending order. Use selection sort, bubble sort, insertion sort or any O(n^2) algorithm.  Solution/Code(Python)12345678910111213141516171819202122232425262">
 
 
 
@@ -108,13 +108,13 @@
 
 
 
-  <link rel="canonical" href="http://zwjmosquito.github.io/2017/09/25/LintCode-LeetCode-Identical-Binary-Tree/"/>
+  <link rel="canonical" href="http://zwjmosquito.github.io/2017/11/10/LintCode-LeetCode-Sort-Integers/"/>
 
 
 
 
 
-  <title>[LintCode/LeetCode] Identical Binary Tree | Tu Blog</title>
+  <title>[LintCode/LeetCode]Sort Integers | Tu Blog</title>
   
 
 
@@ -221,7 +221,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zwjmosquito.github.io/2017/09/25/LintCode-LeetCode-Identical-Binary-Tree/">
+    <link itemprop="mainEntityOfPage" href="http://zwjmosquito.github.io/2017/11/10/LintCode-LeetCode-Sort-Integers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wenji Zhang">
@@ -238,7 +238,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[LintCode/LeetCode] Identical Binary Tree</h1>
+          <h1 class="post-title" itemprop="name headline">[LintCode/LeetCode]Sort Integers</h1>
         
 
         <div class="post-meta">
@@ -250,8 +250,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T21:38:59-05:00">
-                2017-09-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T10:15:31-06:00">
+                2017-11-10
               </time>
             
 
@@ -289,13 +289,74 @@
 
       
         <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><blockquote>
-<p>Check if two binary trees are identical. Identical means the two binary trees have the same structure and every identical position has the same value.</p>
+<p>Given an integer array, sort it in ascending order. Use selection sort, bubble sort, insertion sort or any O(n^2) algorithm.</p>
 </blockquote>
-<h1 id="Solution-Code-Python"><a href="#Solution-Code-Python" class="headerlink" title="Solution/Code(Python)"></a>Solution/Code(Python)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Definition of TreeNode:</span></div><div class="line"><span class="string">class TreeNode:</span></div><div class="line"><span class="string">    def __init__(self, val):</span></div><div class="line"><span class="string">        this.val = val</span></div><div class="line"><span class="string">        this.left, this.right = None, None</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    @param: a: the root of binary tree a.</span></div><div class="line"><span class="string">    @param: b: the root of binary tree b.</span></div><div class="line"><span class="string">    @return: true if they are identical, or false.</span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isIdentical</span><span class="params">(self, a, b)</span>:</span></div><div class="line">        <span class="comment"># write your code here</span></div><div class="line">        <span class="keyword">if</span> a == <span class="keyword">None</span> <span class="keyword">and</span> b == <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">        <span class="keyword">if</span> (a == <span class="keyword">None</span> <span class="keyword">and</span> b!= <span class="keyword">None</span>) <span class="keyword">or</span> (a != <span class="keyword">None</span> <span class="keyword">and</span> b == <span class="keyword">None</span>):</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">        <span class="keyword">if</span> a.val != b.val:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">        <span class="keyword">return</span> self.isIdentical(a.left, b.left) <span class="keyword">and</span> self.isIdentical(a.right,b.right)        </div></pre></td></tr></table></figure>
+<h1 id="Solution-Code-Python"><a href="#Solution-Code-Python" class="headerlink" title="Solution/Code(Python)"></a>Solution/Code(Python)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    @param: A: an integer array</span></div><div class="line"><span class="string">    @return: </span></div><div class="line"><span class="string">    """</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortIntegers</span><span class="params">(self, A)</span>:</span></div><div class="line">        <span class="comment"># write your code here</span></div><div class="line">        <span class="comment"># Selection sort</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(A)):</div><div class="line">            minNum = min(A[i:len(A)])</div><div class="line">            minIndex = A[i:len(A)].index(minNum) + i</div><div class="line">            A[i], A[minIndex] = A[minIndex], A[i]</div><div class="line">            </div><div class="line">        <span class="comment"># Bubble sort</span></div><div class="line">        finished = <span class="keyword">True</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(A)):</div><div class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range (len(A) - <span class="number">1</span>):</div><div class="line">                <span class="keyword">if</span> A[j] &gt; A[j+<span class="number">1</span>]:</div><div class="line">                    A[j], A[j+<span class="number">1</span>] = A[j+<span class="number">1</span>], A[j]</div><div class="line">                    finished = <span class="keyword">False</span></div><div class="line">            <span class="keyword">if</span> finished == <span class="keyword">True</span>:</div><div class="line">                <span class="keyword">break</span></div><div class="line">        </div><div class="line">        <span class="comment"># Insertion sort</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(A)):</div><div class="line">	        <span class="keyword">for</span> j <span class="keyword">in</span> range(i,<span class="number">0</span>,<span class="number">-1</span>):</div><div class="line">		        <span class="keyword">if</span> A[j] &lt; A[j<span class="number">-1</span>]:</div><div class="line">			        A[j], A[j<span class="number">-1</span>] = A[j<span class="number">-1</span>], A[j]</div><div class="line">		        <span class="keyword">else</span>:</div><div class="line">			        <span class="keyword">break</span></div><div class="line"></div><div class="line">        <span class="keyword">return</span> A</div><div class="line"> </div></pre></td></tr></table></figure>
 <h1 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h1><ul>
-<li>This is a basic binary tree problem. The idea is based on recursion;</li>
-<li>Big problem: identity of two trees –&gt; Small problem: identity of root, left child, right child;</li>
-<li>Stop condition:<br>– two nodes are not the same, return False<br>– reach leaf node, return True</li>
+<li>This problem is a good review for the basic sorting algorithms with N^2 complexity.</li>
+<li>To summarize: </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Algorithms</th>
+<th style="text-align:center">Best Case</th>
+<th style="text-align:center">Worst Case</th>
+<th style="text-align:center">Average</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Selection Sort</td>
+<td style="text-align:center">O(N^2)</td>
+<td style="text-align:center">O(N^2)</td>
+<td style="text-align:center">O(N^2)</td>
+</tr>
+<tr>
+<td style="text-align:center">Bubble Sort</td>
+<td style="text-align:center">O(N)</td>
+<td style="text-align:center">O(N^2)</td>
+<td style="text-align:center">N/A</td>
+</tr>
+<tr>
+<td style="text-align:center">Insertion Sort</td>
+<td style="text-align:center">O(N)</td>
+<td style="text-align:center">O(N^2)</td>
+<td style="text-align:center">N/A</td>
+</tr>
+<tr>
+<td style="text-align:center">QuickSort</td>
+<td style="text-align:center">O(NlogN)</td>
+<td style="text-align:center">O(N^2)</td>
+<td style="text-align:center">O(NlogN)</td>
+</tr>
+<tr>
+<td style="text-align:center">HeapSort</td>
+<td style="text-align:center">O(NlogN)</td>
+<td style="text-align:center">O(NlogN)</td>
+<td style="text-align:center">O(NlogN)</td>
+</tr>
+<tr>
+<td style="text-align:center">Counting Sort</td>
+<td style="text-align:center">O(N)</td>
+<td style="text-align:center">O(N)</td>
+<td style="text-align:center">O(N)</td>
+</tr>
+<tr>
+<td style="text-align:center">Radix Sort</td>
+<td style="text-align:center">O(N)</td>
+<td style="text-align:center">O(N)</td>
+<td style="text-align:center">O(N)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The idea of selection sort: divide the list into two sub-lists: SortedList and UnsortedList. At each time step, we find the smallest (or largest, depending on the required order) number in UnsortedList and insert it to the last position of the SortedList.</li>
+<li>The idea of bubble sort: at each time step, we compare the pair of adjacent elements in the list and correct the order. After the first iteration, the last element will be the largest number in the list (or the smallest, depending on the required order). Therefore, the worst case requires N^2 times iteration.</li>
+<li><p>The idea of insertion sort: the list is divided into two sub-lists: SortedList and UnsortedList. At each time step, we choose a element and find the position for it in the SortedList. </p>
+</li>
+<li><p>For algorithms with O(NlogN) complexity, we will review them in ‘Sort Integer II’. </p>
+</li>
 </ul>
 
       
@@ -321,8 +382,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/24/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/11/08/LintCode-LeetCode-Check-Sum-of-Square-Numbers/" rel="next" title="[LintCode/LeetCode] Check Sum of Square Numbers">
+                <i class="fa fa-chevron-left"></i> [LintCode/LeetCode] Check Sum of Square Numbers
               </a>
             
           </div>
@@ -330,10 +391,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/26/LintCode-LeetCode-Binary-Tree-Inorder-Traversal/" rel="prev" title="[LintCode/LeetCode] Binary Tree Inorder Traversal">
-                [LintCode/LeetCode] Binary Tree Inorder Traversal <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
