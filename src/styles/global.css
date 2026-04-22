@@ -50,3 +50,16 @@ The name should be the same as the theme name below.
   --radius-field: 0.25rem;
   --radius-box: 0.5rem;
 }
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 500;
+  }
+  code, pre, .font-mono, .mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
