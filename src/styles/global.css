@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-/* 
+/*
 If you want use the ThemeToggle component,
 and chose the themes to light and dard,
 move the --default and --prefersdark to the themes you want
@@ -10,10 +10,43 @@ The name should be the same as the theme name below.
 */
 @plugin "daisyui" {
   themes:
-    light --default,
-    dark --prefersdark,
+    light,
+    dark,
     synthwave,
     retro,
     valentine,
-    dim;
+    dim --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: "butter";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: oklch(94% 0.04 90);
+  --color-base-200: oklch(90% 0.05 90);
+  --color-base-300: oklch(86% 0.07 90);
+  --color-base-content: oklch(22% 0.02 50);
+
+  --color-primary: oklch(58% 0.14 45);
+  --color-primary-content: oklch(98% 0.01 90);
+
+  --color-secondary: oklch(60% 0.10 120);
+  --color-secondary-content: oklch(98% 0.01 90);
+
+  --color-accent: oklch(58% 0.14 45);
+  --color-accent-content: oklch(98% 0.01 90);
+
+  --color-neutral: oklch(55% 0.03 80);
+  --color-neutral-content: oklch(98% 0.01 90);
+
+  --color-info: oklch(70% 0.12 220);
+  --color-success: oklch(70% 0.15 140);
+  --color-warning: oklch(78% 0.15 80);
+  --color-error: oklch(65% 0.20 30);
+
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
 }
