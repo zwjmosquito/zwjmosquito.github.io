@@ -1,7 +1,6 @@
 ---
 import Layout from "./Layout.astro";
 import { Image } from "astro:assets";
-import SkillBadge from "../components/SkillBadge.astro";
 import { ExternalLink } from "@lucide/astro";
 
 interface Props {
@@ -163,7 +162,7 @@ function calculateDuration(startDate: Date, endDate?: Date) {
             <h2 class="card-title text-lg mb-3">Tech Stack</h2>
             <div class="flex flex-wrap gap-2">
               {skills.map((skill) => (
-                <SkillBadge skill={skill} />
+                <span class="badge badge-sm badge-soft badge-accent">{skill}</span>
               ))}
             </div>
           </div>

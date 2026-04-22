@@ -1,7 +1,6 @@
 ---
 import Layout from './Layout.astro';
 import { Image } from 'astro:assets';
-import SkillBadge from '../components/SkillBadge.astro';
 
 interface Props {
   title: string;
@@ -75,7 +74,7 @@ const readingTime = Math.ceil(wordCount / 200); // Average reading speed: 200 wo
       {tags && tags.length > 0 && (
         <div class="flex flex-wrap gap-2 mt-4">
           {tags.map((tag) => (
-            <SkillBadge skill={tag} />
+            <span class="badge badge-sm badge-soft badge-accent">{tag}</span>
           ))}
         </div>
       )}

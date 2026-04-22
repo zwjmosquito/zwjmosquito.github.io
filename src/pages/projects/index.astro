@@ -7,26 +7,12 @@ import ProjectsLayoutTabsHorizontal from "../../components/ProjectsLayoutTabsHor
 import ProjectsLayoutTabsVertical from "../../components/ProjectsLayoutTabsVertical.astro";
 
 const projects = await getCollection("projects");
-const categories = await getCollection("projectCategories");
 
 // Load General settings for layout preference
 const generalEntry = await getEntry("general", "index");
 const projectsLayout = generalEntry?.data?.projectsLayout ?? "grid";
 
-// Sort categories by sortOrder, then alphabetically
-const sortedCategories = categories.sort((a, b) => {
-  const orderA = a.data.sortOrder ?? 0;
-  const orderB = b.data.sortOrder ?? 0;
-  if (orderA !== orderB) return orderA - orderB;
-  return a.data.title.localeCompare(b.data.title);
-});
-
-// Build a map of category slug -> category data
-const categoryMap = new Map(
-  sortedCategories.map((cat) => [cat.id, cat.data])
-);
-
-// Build category groups
+// No categories — all projects are uncategorized
 interface CategoryGroup {
   slug: string;
   title: string;
@@ -37,26 +23,9 @@ interface CategoryGroup {
 
 const categoryGroups: CategoryGroup[] = [];
 
-for (const cat of sortedCategories) {
-  const catProjects = projects
-    .filter((p) => p.data.category === cat.id)
-    .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime());
-
-  if (catProjects.length > 0) {
-    categoryGroups.push({
-      slug: cat.id,
-      title: cat.data.title,
-      description: cat.data.description,
-      icon: cat.data.icon,
-      projects: catProjects,
-    });
-  }
-}
-
-// Uncategorized projects
-const uncategorizedProjects = projects
-  .filter((p) => !p.data.category || !categoryMap.has(p.data.category))
-  .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime());
+const uncategorizedProjects = projects.sort(
+  (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime()
+);
 ---
 
 <Layout
