@@ -116,10 +116,23 @@ const general = defineCollection({
   }),
 });
 
+// Journal collection (our own posts)
+const journal = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/journal" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    excerpt: z.string().optional(),
+    cover: z.string().optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   hero,
   projects,
   blog,
   about,
   general,
+  journal,
 };
