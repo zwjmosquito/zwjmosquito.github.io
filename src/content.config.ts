@@ -31,27 +31,6 @@ const hero = defineCollection({
     }),
 });
 
-// Projects collection
-const projects = defineCollection({
-  loader: glob({
-    pattern: "**/*.{md,mdoc,yaml}",
-    base: "./src/content/projects",
-  }),
-  schema: ({ image }) =>
-    z.object({
-      featured: z.boolean().optional().default(false),
-      category: z.string().optional(),
-      title: z.string(),
-      description: z.string(),
-      image: image(),
-      startDate: z.coerce.date(),
-      endDate: z.coerce.date().optional(),
-      skills: z.array(z.string()),
-      demoLink: z.string().url().optional(),
-      sourceLink: z.string().url().optional(),
-    }),
-});
-
 // About singleton
 const about = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/about" }),
@@ -116,7 +95,6 @@ const journal = defineCollection({
 
 export const collections = {
   hero,
-  projects,
   about,
   general,
   journal,

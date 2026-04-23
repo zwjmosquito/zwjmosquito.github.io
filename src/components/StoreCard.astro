@@ -2,7 +2,7 @@
 interface Props {
   name: string;
   url: string;
-  image: string;
+  image?: string;
   description: string;
 }
 const { name, url, image, description } = Astro.props;
@@ -13,12 +13,14 @@ const { name, url, image, description } = Astro.props;
   rel="noopener"
   class="block rounded-box bg-base-200 overflow-hidden hover:bg-base-300 transition-colors"
 >
-  <img
-    src={image}
-    alt={name}
-    class="w-full h-48 object-cover bg-base-300"
-    onerror="this.style.display='none'"
-  />
+  {image && (
+    <img
+      src={image}
+      alt={name}
+      class="w-full h-48 object-cover bg-base-300"
+      onerror="this.style.display='none'"
+    />
+  )}
   <div class="p-5">
     <h3 class="text-xl font-medium mb-1">{name}</h3>
     <p class="text-sm text-base-content/80">{description}</p>
