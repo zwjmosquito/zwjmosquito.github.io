@@ -14,11 +14,13 @@ const general = generalEntry.data;
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const {
   title = "Bloomfolio Template",
   description = "A modern portfolio template built with Astro and DaisyUI",
+  noindex = false,
 } = Astro.props;
 
 // Custom blur-fade animation configuration
@@ -53,6 +55,7 @@ const origin = Astro.url.origin;
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
