@@ -1,14 +1,47 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import StoreCard from "../components/StoreCard.astro";
-import stores from "../content/stores.json";
+
+const STORE_URL =
+  "https://www.amazon.com/stores/MoLiBabyCollection/page/98AFAF1B-8843-4533-91A5-A20BFA795075?lp_asin=B0D1WNYBBY&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto";
 ---
 
-<Layout title="Stores" description="Stores by Wenji Zhang">
+<Layout
+  title="MoLi — baby hair accessories"
+  description="MoLi, a brand of baby hair accessories started in 2023."
+  noindex={true}
+>
   <section class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-medium mb-8">Stores</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {stores.map((s) => <StoreCard {...s} />)}
+    <img
+      src="/stores/moli/moli-baby-hair-accessories-banner.jpg"
+      alt="MoLi — baby hair accessories"
+      class="w-full rounded-box object-cover aspect-[2/1] mb-10"
+    />
+
+    <div class="flex items-center gap-4 mb-2">
+      <img
+        src="/stores/moli/1.png"
+        alt="MoLi logo"
+        class="w-8 h-8 object-contain"
+      />
+      <h1 class="text-3xl font-medium">MoLi</h1>
     </div>
+    <p class="text-sm text-neutral mb-8">Baby hair accessories. Since 2023.</p>
+
+    <div class="prose prose-lg max-w-none mb-10">
+      <p>
+        I started MoLi in 2023 — the year my daughter was born.
+        Every bow, every little clip has been tested first on her.
+        The brand and the kid are growing up together.
+      </p>
+    </div>
+
+    <a
+      href={STORE_URL}
+      target="_blank"
+      rel="noopener"
+      class="btn btn-primary"
+    >
+      Visit on Amazon →
+    </a>
   </section>
 </Layout>
