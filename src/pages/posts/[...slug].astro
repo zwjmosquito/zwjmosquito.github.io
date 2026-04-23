@@ -1,0 +1,30 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("journal", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<"journal">;
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const formattedDate = post.data.date.toISOString().slice(0, 10);
+---
+
+<Layout title={post.data.title} description={post.data.excerpt ?? post.data.title}>
+  <article class="max-w-2xl mx-auto px-4 py-12">
+    <p class="mono text-sm text-neutral mb-3">{formattedDate}</p>
+    <h1 class="text-4xl font-medium mb-8 leading-tight">{post.data.title}</h1>
+    <div class="prose prose-lg max-w-none prose-headings:font-serif">
+      <Content />
+    </div>
+    <p class="mt-12 text-sm"><a href="/" class="text-primary">← Back to journal</a></p>
+  </article>
+</Layout>
