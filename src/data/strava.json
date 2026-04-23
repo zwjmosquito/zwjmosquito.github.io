@@ -1,8 +1,36 @@
 {
-  "total_distance_m": 0,
-  "total_km": 0,
-  "ride_count": 0,
-  "last_ride_date": null,
-  "last_synced_ts": "2026-04-10T00:00:00.000Z",
-  "activities": []
+  "total_distance_m": 61935.799999999996,
+  "total_km": 61.94,
+  "ride_count": 3,
+  "last_ride_date": "2026-04-19T22:45:44Z",
+  "last_synced_ts": "2026-04-23T15:51:58.031Z",
+  "activities": [
+    {
+      "id": 18178427924,
+      "start_date": "2026-04-19T22:45:44Z",
+      "distance_m": 7930.7,
+      "moving_time_s": 1885,
+      "name": "Afternoon Ride",
+      "type": "Ride",
+      "map_polyline": "qfdbHj}nhVU`@MBEFDVb@Ch@B^?f@Fb@P`An@bBbAXJdA@~@C|AMb@GbAIV?j@Fd@Nt@Zt@l@b@Pd@D\\Cp@Q\\YZ_@Z[j@{@~@gAx@kA~DcFp@eAN[RWbDoFf@q@TQl@Y\\Kn@QrCg@j@S^Ul@s@xBmDp@_An@o@jDkCZYJMb@Yr@_Ax@{Ar@gAJKxBkCz@_AxAoAhBcAfBm@nA]lASrBOlAEl@?TC`@Bz@?nFCXCp@@hCAh@@`AG|@BZF^El@C^I^ChBAfAMNE^A^@xAVrAD|@AVBJBXGhAEVCD@h@Az@Gj@?v@Bx@Gz@?v@J^L`@TVDLJx@\\RFV@LE`@Wv@_@f@QXE`@CT@PERTT[XIlAp@`@BJ?PEF@HALCDEAI?AEBCJIBW@c@?YG}@e@WGcAXECWAe@Bs@Tm@Ti@^YL{@Y}@][Qq@Wu@KeBHkAGUBk@?kAJWAYDYAc@@c@?QBs@@wAEc@K[GG@GEu@Ee@BeAPkCDy@Pa@Ck@BOEw@Gw@Hi@?U@qCBcC@e@B_@AeF@a@AyAF}@Ja@@u@J_ATo@Rs@Ze@J_Ad@o@^}@t@}AzAQV[Z[b@cAlAy@rAi@dAm@v@gA~@uDnC_@`@_BzBwBdDQNg@X[J{Cj@a@HaA`@o@f@a@b@[f@yCbFeBfCaBrBiDrEeBrBUVWPSFe@F]@]ESKiBkAq@Qk@Im@BaANe@?y@HyADa@B_@Ik@WgCcBe@UYG_A?}@BEIBIFGNAHW?OMWByAC_@"
+    },
+    {
+      "id": 18165275255,
+      "start_date": "2026-04-18T23:18:11Z",
+      "distance_m": 30297.6,
+      "moving_time_s": 5856,
+      "name": "Afternoon Ride",
+      "type": "Ride",
+      "map_polyline": "}fdbHzxnhVMlARfAK^g@\\{a@i@uAo@a@@e@d@{@T_BUkT]ax@_AsF`@cFzAmEn@yEIs@Qu@{@w@@WXEbAMToBdA}H~Iq@ZoCX_C[u@DoAd@{AbAuAbBiApBYvAcDxImAhCm@j@sChBkCjAiBzBaIvFs@XeFb@qAj@uAlAeK`NqClJ_E`FoBjBeD`Fo@`Bk@fFmBnCe@lAe@nCyCr@mDfEgFnCcA@m@a@g@Iy@`@Yr@WpBmAdBk@vBg@`@cAC{@~@a@jAo@pDsAlCqBbGs@pAqB~Bc@jA[tBD`Di@`C?bEo@xHm@xAUv@GhBl@dCxAxAN`@^xKIbAHt@G|AD`CRjAAz@n@dDb@tAh@~@l@rC?pJXj@jAjAp@LHVrAbQNzEPeAUpFDrCG`@Yf@j@vBmBl@cCtBcG|IU~A@~CsB~N_@hAmBxAIzAXdAnAlAXpB|@dCdApBNfDh@dE^|ATb@fBR`Bc@`CzAlFj@bAe@n@`@dAH|Bu@VcFtAWtATtBhB`AdCpCtSEr@GGB|B_@jC_JvWmArFg@nH]jUs@jG_EhRqH~X_@jB{@dI{Gxv@iCpWg@xG]|IKrIHdACdHrAjd@BhDAwEsAkd@FsFEwHp@{PvDqb@dIs{@pIk\\tEoUZuE^gVj@uFbAoErHaTr@yCXiCWaGMaBqAsJq@mC}@}AiBqAsCFKPStE{@PiAb@y@Ku@c@cAf@qFm@wBwAiBb@uAKi@_AYkAk@{EIcCsBwE_@mASuA{@s@e@iADaBlB_B^gAtB_OE{DRiAvGkJlBaBhBm@JSk@kB^cABuAIw@TuFWs@}AuTQYq@MkAmASe@FqGImBi@yB{@mBaAyEYmFE{CLw@?aA[kJMg@wAuAo@aCJeCz@oBj@qGFkAC_Dl@wCCkD^wBt@yAbBmB|@eBzAwEvAwCf@oD`@eA~@aAbABXU|@qChAyAVmBRo@|@e@jBn@n@GzCwA|AgAdCiDlDeA`@kC^}@tBwCj@gFPs@lDcGpCoChDaEb@{@xBeIbK}MzAqAvAk@hGw@zIkGxAmBxCsAnBoA|@{@p@eBh@u@tCkIRcAp@yAlBcC|CiBz@K`DNfDi@|@u@xF{GdC_BPwANSv@Ax@|@v@TvEFtC_@~GoBfHYpkAvA`BTr@O^c@ZIxAh@|`@j@p@Cj@i@IaADgB"
+    },
+    {
+      "id": 18139107310,
+      "start_date": "2026-04-16T22:40:23Z",
+      "distance_m": 23707.5,
+      "moving_time_s": 4469,
+      "name": "Afternoon Ride",
+      "type": "Ride",
+      "map_polyline": "mddbHlznhV^jAl@f@At@N^nDnBlCBjF]zA`@dCvApAMb@UjAqA|IkLfFqI`AkAjAq@lE{@tAs@lDiFbAoAtGiF~ByDjDiEnCcCpCqAnCy@bEa@tWS~CHfHk@xC\\xC@pL[jAPxDxAfAg@bBm@pBGXM`Bp@pACjAg@t@y@pDyJRgBG_CVwDL@~@`B?LMb@KS@g@V}@NA|BsBlAc@nDi@xGo@lBq@fBUhDbB|@Z`AJr@E~Cw@vB}Ab@s@BWaBkB]SIc@Dg@d@qAd@uEAe@Ma@_@k@cB_Am@wAa@sEKaCJoEI_BHgA?w@Ss@m@cA_@cAOsA?{@LcA~@_CZ{AJoHT{B`@qAj@_A~@{@zBoAdFeEl@{@Zy@Fc@B}FNaEEaAg@oA@[PQ@Sk@wB?_ATaBAsA[eBmAwCMq@EaAF_Ap@wBxAuJEg@]s@_@wCA]\\{@BWYqBrD}DbBoAjKsFbF_BnAu@hAoAfDaGlBmBfOwItBs@rE}@dAe@`BoAzCwDWHKVcCxCiA|@kBv@gDl@yBr@cPjJqAlAiDbGeBjByAp@_ErAqKtFoAz@mExE?RNj@Bx@]z@A\\RvBVz@PVFn@sAtJq@vBInARnBbA~Bd@vB@dAUjB?~@Lv@Xp@?f@SV?HHf@`@t@DrAOnCG~GKh@]v@o@v@eF`Ew@\\_Ap@_A|@e@x@c@|AUjCKvGWnA}@|BQdA?hAPpARp@bAfBLp@QtBHnAIxFn@zHJb@^l@jBhAXd@Jb@@Xa@tEo@~AAZPt@ZJ~AbB?Ni@|@oBvAqCv@}ADg@ImFcCsDv@yAJQJiJnAqA\\s@h@yAnAc@z@GNDv@HFJk@AQiAgBGJ?f@SzBFtCOrAsDfKkAlAg@NyADuAq@UA{@Xu@Ee@LiA\\o@d@[F}D}AkAOqAHqAGqHZwCIoB[qBTkCB}@PsCIgCPuSFwD\\oDfAyBjA_CpBeDxDuCzEaHtFcEfGe@h@gAf@uE~@eBhAgGxJmLdOi@XqAHcCsA_Be@eF`@{CEmD{BEkAg@]WkA?_BEN?|ALFF[@uDISg@OIg@Poc@Ke@S_@eByAEOBShBc@|KKbA[`CoAn@MfA@tB^hAAbH_CR_@Ic@m@KmZa@{F]SMDs^JwLCmCZyASoBLueA@o@Vc@@c@S[mA\\k^g@G[?gERiG@}GG}Ag@G"
+    }
+  ]
 }
