@@ -1,6 +1,22 @@
 ---
-// Stubbed — will read strava.json and route.geojson in Task 20
+import stravaData from "../data/strava.json";
+import routeData from "../data/route.json";
+
+const totalKm: number = stravaData.total_km ?? 0;
+const routeTotalKm: number = routeData.properties.total_km;
+const progressPct = Math.min(100, (totalKm / routeTotalKm) * 100);
 ---
-<div class="py-4 px-5 rounded-box bg-base-200 text-sm text-neutral mono">
-  🚴  — km / — km · setting up…
-</div>
+
+<a
+  href="/cycling/"
+  class="block py-4 px-5 rounded-box bg-base-200 hover:bg-base-300 transition-colors"
+>
+  <div class="flex items-center justify-between gap-4 text-sm">
+    <div class="flex items-center gap-3">
+      <span class="text-xl">🚴</span>
+      <span class="mono">{totalKm.toFixed(0)} km / {routeTotalKm.toFixed(0)} km</span>
+      <span class="text-neutral">· {progressPct.toFixed(1)}% to Dali</span>
+    </div>
+    <span class="text-primary">See the map →</span>
+  </div>
+</a>
