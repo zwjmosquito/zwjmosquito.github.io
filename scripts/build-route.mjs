@@ -64,7 +64,7 @@ const geojson = {
   geometry: { type: "LineString", coordinates: densified },
 };
 
-const outPath = path.resolve("src/data/route.geojson");
+const outPath = path.resolve("src/data/route.json");
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, JSON.stringify(geojson, null, 2));
 console.log(`Wrote ${densified.length} points, total ${totalKm.toFixed(0)} km to ${outPath}`);
