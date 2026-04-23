@@ -10,7 +10,7 @@ const hero = defineCollection({
       name: z.string(),
       title: z.string(),
       description: z.string(),
-      avatar: image(),
+      avatar: image().optional(),
       location: z.string().optional(),
       socialLinks: z.array(
         z.object({
