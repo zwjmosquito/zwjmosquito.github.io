@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CyclingMap from "../components/CyclingMap.astro";
+import stravaData from "../data/strava.json";
+
+type Activity = {
+  id: number;
+  name: string;
+  start_date: string;
+  distance_m: number;
+};
+
+const recent = (stravaData.activities as Activity[] | undefined)?.slice(0, 5) ?? [];
+---
+
+<Layout title="Cycling" description="Seattle to Dali, one ride at a time.">
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-medium mb-2">Seattle → Dali</h1>
+    <p class="text-neutral mb-8">Every real ride moves the marker. Started April 10, 2026.</p>
+
+    <CyclingMap />
+
+    {recent.length > 0 && (
+      <div class="mt-16">
+        <h2 class="text-2xl font-medium mb-6">Recent rides</h2>
+        <ul class="divide-y divide-base-300">
+          {recent.map((r) => (
+            <li class="py-4 flex justify-between items-center">
+              <div>
+                <p class="font-medium">{r.name}</p>
+                <p class="text-sm text-neutral mono">{r.start_date.slice(0, 10)}</p>
+              </div>
+              <p class="mono">{(r.distance_m / 1000).toFixed(1)} km</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </section>
+</Layout>
