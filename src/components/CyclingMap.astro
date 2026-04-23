@@ -1,0 +1,129 @@
+---
+import stravaData from "../data/strava.json";
+import routeData from "../data/route.json";
+import { positionAlongRoute } from "../lib/route-math";
+
+const coords = routeData.geometry.coordinates as [number, number][];
+const routeTotalKm: number = routeData.properties.total_km;
+const totalKm: number = stravaData.total_km ?? 0;
+const pos = positionAlongRoute(coords, totalKm);
+const progressPct = Math.min(100, (totalKm / routeTotalKm) * 100);
+
+// Nearest-waypoint lookup for human-readable caption.
+// Approximate planar distance is fine for label selection.
+function nearestWaypoint() {
+  const waypoints = routeData.properties.waypoints as { name: string; lat: number; lng: number }[];
+  let best = waypoints[0];
+  let bestApprox = Infinity;
+  for (const wp of waypoints) {
+    const dLat = wp.lat - pos.lat;
+    const dLng = wp.lng - pos.lng;
+    const approx = Math.sqrt(dLat * dLat + dLng * dLng);
+    if (approx < bestApprox) {
+      bestApprox = approx;
+      best = wp;
+    }
+  }
+  return best.name;
+}
+const nearName = nearestWaypoint();
+---
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<div
+  id="cycling-map"
+  data-coords={JSON.stringify(coords)}
+  data-traveled-km={totalKm}
+  data-total-km={routeTotalKm}
+  data-pos-lat={pos.lat}
+  data-pos-lng={pos.lng}
+  class="w-full h-[500px] rounded-box"
+></div>
+
+<div class="mt-6 text-center">
+  <p class="mono text-5xl">
+    {totalKm.toFixed(0)}<span class="text-2xl text-neutral"> km</span>
+  </p>
+  <p class="text-neutral mt-2">
+    of {routeTotalKm.toFixed(0)} km · {progressPct.toFixed(1)}% · near {nearName}
+  </p>
+</div>
+
+<noscript>
+  <p class="text-center text-sm text-neutral mt-4">
+    Enable JavaScript to see the interactive map.
+  </p>
+</noscript>
+
+<script>
+  import L from "leaflet";
+
+  const el = document.getElementById("cycling-map")!;
+  const coords = JSON.parse(el.dataset.coords!) as [number, number][];
+  const posLat = parseFloat(el.dataset.posLat!);
+  const posLng = parseFloat(el.dataset.posLng!);
+  const traveledKm = parseFloat(el.dataset.traveledKm!);
+
+  // Build the traveled slice: walk forward until we've accumulated traveledKm.
+  const R = 6371;
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  function hav(a: [number, number], b: [number, number]): number {
+    const dLat = toRad(b[1] - a[1]);
+    const dLng = toRad(b[0] - a[0]);
+    const lat1 = toRad(a[1]);
+    const lat2 = toRad(b[1]);
+    const h =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+  let rem = traveledKm;
+  const traveled: [number, number][] = [coords[0]];
+  for (let i = 0; i < coords.length - 1 && rem > 0; i++) {
+    const seg = hav(coords[i], coords[i + 1]);
+    if (rem >= seg) {
+      traveled.push(coords[i + 1]);
+      rem -= seg;
+    } else {
+      const t = seg === 0 ? 0 : rem / seg;
+      traveled.push([
+        coords[i][0] + (coords[i + 1][0] - coords[i][0]) * t,
+        coords[i][1] + (coords[i + 1][1] - coords[i][1]) * t,
+      ]);
+      rem = 0;
+    }
+  }
+
+  const map = L.map("cycling-map", { scrollWheelZoom: false }).setView([posLat, posLng], 3);
+
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap, © CartoDB",
+    maxZoom: 18,
+  }).addTo(map);
+
+  // Full route — faded tan
+  L.polyline(
+    coords.map(([lng, lat]) => [lat, lng] as [number, number]),
+    { color: "#d0bfa6", weight: 3, opacity: 0.7 }
+  ).addTo(map);
+
+  // Traveled — bright rust (only if any traveled distance)
+  if (traveled.length > 1) {
+    L.polyline(
+      traveled.map(([lng, lat]) => [lat, lng] as [number, number]),
+      { color: "#b85a3d", weight: 4 }
+    ).addTo(map);
+  }
+
+  // Current position marker
+  const icon = L.divIcon({
+    className: "",
+    html: '<div style="background:#b85a3d;color:white;padding:4px 8px;border-radius:12px;font-size:12px;white-space:nowrap">🚴</div>',
+    iconAnchor: [16, 16],
+  });
+  L.marker([posLat, posLng], { icon }).addTo(map);
+
+  // Fit the full route in view
+  const latlngs = coords.map(([lng, lat]) => [lat, lng] as [number, number]);
+  map.fitBounds(L.latLngBounds(latlngs), { padding: [20, 20] });
+</script>
