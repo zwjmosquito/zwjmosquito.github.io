@@ -1,50 +1,50 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Projects from "../components/Projects.astro";
-import Blog from "../components/Blog.astro";
-import { getEntry, render } from "astro:content";
+import JournalCard from "../components/JournalCard.astro";
+import CyclingTeaser from "../components/CyclingTeaser.astro";
+import { getCollection, getEntry } from "astro:content";
 
-// Load Hero singleton
+// Load hero singleton for avatar + name + tagline
 const heroEntry = await getEntry("hero", "index");
+const hero = heroEntry?.data ?? { name: "Wenji Zhang", description: "Notes, rides, and whatever else." };
 
-// Load About singleton
-const aboutEntry = await getEntry("about", "index");
-const { Content: AboutContent } = await render(aboutEntry);
-
-// Load General singleton
-const generalEntry = await getEntry("general", "index");
-const general = generalEntry.data;
+// Load journal posts (skip drafts), sort newest first
+const posts = (await getCollection("journal", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 ---
 
-<Layout
-  title={`${heroEntry.data.name} - Portfolio`}
-  description={heroEntry.data.description}
->
-  <main>
-    <!-- Hero Section (Always visible) -->
-    <Hero hero={heroEntry.data} />
+<Layout title={hero.name} description={hero.description}>
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <section class="flex items-center gap-4 mb-10">
+      {hero.avatar && (
+        <img
+          src={typeof hero.avatar === "string" ? hero.avatar : hero.avatar.src}
+          alt={hero.name}
+          class="w-14 h-14 rounded-full object-cover"
+        />
+      )}
+      <div>
+        <h1 class="text-3xl font-medium leading-tight">{hero.name}</h1>
+        <p class="text-neutral">{hero.description}</p>
+      </div>
+    </section>
 
-    <!-- All other sections hidden on mobile -->
-    <div class="hidden lg:block">
-      <!-- About Section -->
-      {
-        general.showAboutSection && (
-          <About
-            title={aboutEntry.data.title}
-            photo={aboutEntry.data.photo}
-            Content={AboutContent}
-            link={aboutEntry.data.link}
+    <CyclingTeaser />
+
+    <div class="mt-10">
+      {posts.length === 0 ? (
+        <p class="text-neutral">Nothing posted yet.</p>
+      ) : (
+        posts.map(post => (
+          <JournalCard
+            title={post.data.title}
+            date={post.data.date}
+            excerpt={post.data.excerpt}
+            slug={post.id}
           />
-        )
-      }
-
-      <!-- Projects Section -->
-      {general.showProjectsSection && <Projects />}
-
-      <!-- Blog Section -->
-      {general.showBlogSection && <Blog />}
+        ))
+      )}
     </div>
   </main>
 </Layout>
