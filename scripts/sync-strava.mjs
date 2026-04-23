@@ -63,9 +63,16 @@ async function main() {
   }
 
   const token = await refreshAccessToken(STRAVA_CLIENT_ID, STRAVA_CLIENT_SECRET, STRAVA_REFRESH_TOKEN);
+
+  // If we have no activities yet, always start from START_DATE — otherwise
+  // resume incrementally from the last successful sync timestamp.
+  const after = (existing.activities?.length ?? 0) > 0
+    ? (existing.last_synced_ts ?? START_DATE)
+    : START_DATE;
+
   let incoming;
   try {
-    incoming = await fetchActivities(token, existing.last_synced_ts ?? START_DATE);
+    incoming = await fetchActivities(token, after);
   } catch (e) {
     console.warn("Strava fetch failed; keeping cached data:", e.message);
     process.exit(0);
