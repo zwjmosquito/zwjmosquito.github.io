@@ -4,6 +4,11 @@ import routeData from "../data/route.json";
 import { positionAlongRoute } from "../lib/route-math";
 
 const coords = routeData.geometry.coordinates as [number, number][];
+const segments = (routeData.properties.segments ?? []) as {
+  kind: "road" | "trail" | "ferry" | "start";
+  start: number;
+  end: number;
+}[];
 const routeTotalKm: number = routeData.properties.total_km;
 const totalKm: number = stravaData.total_km ?? 0;
 const pos = positionAlongRoute(coords, totalKm);
@@ -33,6 +38,7 @@ const nearName = nearestWaypoint();
 <div
   id="cycling-map"
   data-coords={JSON.stringify(coords)}
+  data-segments={JSON.stringify(segments)}
   data-traveled-km={totalKm}
   data-total-km={routeTotalKm}
   data-pos-lat={pos.lat}
@@ -60,6 +66,8 @@ const nearName = nearestWaypoint();
 
   const el = document.getElementById("cycling-map")!;
   const coords = JSON.parse(el.dataset.coords!) as [number, number][];
+  type Segment = { kind: "road" | "trail" | "ferry" | "start"; start: number; end: number };
+  const segments = JSON.parse(el.dataset.segments ?? "[]") as Segment[];
   const posLat = parseFloat(el.dataset.posLat!);
   const posLng = parseFloat(el.dataset.posLng!);
   const traveledKm = parseFloat(el.dataset.traveledKm!);
@@ -101,11 +109,21 @@ const nearName = nearestWaypoint();
     maxZoom: 18,
   }).addTo(map);
 
-  // Full route — faded tan
-  L.polyline(
-    coords.map(([lng, lat]) => [lat, lng] as [number, number]),
-    { color: "#d0bfa6", weight: 3, opacity: 0.7 }
-  ).addTo(map);
+  // Full route base — faded tan, with non-road legs dashed.
+  // ferry: long dashes, trail: short dashes.
+  const drawSegment = (start: number, end: number, kind: Segment["kind"]) => {
+    const slice = coords
+      .slice(start, end + 1)
+      .map(([lng, lat]) => [lat, lng] as [number, number]);
+    const dashArray =
+      kind === "ferry" ? "10 8" : kind === "trail" ? "2 6" : undefined;
+    L.polyline(slice, { color: "#d0bfa6", weight: 3, opacity: 0.7, dashArray }).addTo(map);
+  };
+  if (segments.length === 0) {
+    drawSegment(0, coords.length - 1, "road");
+  } else {
+    for (const seg of segments) drawSegment(seg.start, seg.end, seg.kind);
+  }
 
   // Traveled — bright rust (only if any traveled distance)
   if (traveled.length > 1) {
