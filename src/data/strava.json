@@ -1,9 +1,9 @@
 {
-  "total_distance_m": 544487.1,
+  "total_distance_m": 544487.0999999999,
   "total_km": 544.49,
   "ride_count": 15,
   "last_ride_date": "2026-06-20T21:07:52Z",
-  "last_synced_ts": "2026-06-21T10:24:46.916Z",
+  "last_synced_ts": "2026-06-22T12:43:33.348Z",
   "activities": [
     {
       "id": 19004178978,
