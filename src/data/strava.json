@@ -1,10 +1,19 @@
 {
-  "total_distance_m": 760152.9,
-  "total_km": 760.15,
-  "ride_count": 21,
-  "last_ride_date": "2026-07-21T01:59:08Z",
-  "last_synced_ts": "2026-07-23T09:18:19.757Z",
+  "total_distance_m": 822647.6,
+  "total_km": 822.65,
+  "ride_count": 22,
+  "last_ride_date": "2026-07-23T22:02:21Z",
+  "last_synced_ts": "2026-07-24T09:14:28.079Z",
   "activities": [
+    {
+      "id": 19439851469,
+      "start_date": "2026-07-23T22:02:21Z",
+      "distance_m": 62494.7,
+      "moving_time_s": 10307,
+      "name": "Afternoon Ride",
+      "type": "Ride",
+      "map_polyline": "gcebHx|ghV]tCc@zQJjA~Lh@q@lGFlb@|I^lDaEhBFDdc@SjBrRUV^?rN[t_@vPn@Pl@WtCeHdCcGU_GxBgKHcCv@pClDOva@l@nC@rDv@zAHfAgi@u@mAe@kCz@ylAsBwGTaJ|BqDVaDGsBqAw@Dc@fBoCnByHjIoDf@iCUmErBcDlEyDbLuBxDcHzDaCnCqIxFoFh@sCxAmLtOyBbI{IhKeC~Dy@hCa@vDwBdDcAdEwC|@wCvDqFzCsEKs@tCiAfBm@tBgD~AuA~FmEfLkEzGW|Bi@`IBlCs@pI_AlCCrBn@zB`BhBb@tWt@rF|BfHFnKbDbDpBhTMtL]`Ah@|B_FvCkGzI]|ACdE{BjOoCtDb@dBhAjApCpILfCp@|Fr@tBjAZpBYpCpAdDb@zBQjBb@fB]bBnC|@e@xCfBpCZf@pAtAbJAhCaAjEwJbZy@lGiAv^gF|VuIz]wLhrAoAlRYbKBdMzAdk@UbSvDf]jAnCpElF|FtLfDtIhClIpDbMBjApEjGrZhNbTlCxNVdCz@lIrFbDb@pCk@nIwElGeB|C{C|CcFxB}AhCSxJRbRwHhDJbO~CbJiApBmAzDqF~AiAhd@aLnLiApQqF`KE`c@wMzEl@pDxC~AbD|C|L`BhCxBx@~BQnB}A`AcC`BcQbDyPjDoHnEmGxJqHlNgEh`@qC|Hl@~ZjItDjDhJhN`R`OlArDh@dFe@|M~AjXpAjLbCvGtEfD~NjBlDfApC~BvAhDb@~DKjFcCvKoCzFsNxRqCjHe@tEH~Iz@nCpBtClHhAjSmE|FUhJj@ja@zIxDxE[hCd@jB`AmAjAOq@oFp@w@fPvApNm@?uLyAkCT@PuBs@qc@~D_vAfHmq@n[ixDnCkZ~Dk\\xBsZEeJmAuE\\mDo@oDiCcHmIeNoEeKuE_PwJgj@o@gKBoIt@sNQmN[{@|D}D|AeD`EsYlAsD|BmC``@{W~CwEnAsEnCoQd@aKd@}AoA{BGeD~C_Pl@}IvAsAr@_DrDgZHaHw@y^vBob@PoKm@qOgBeLwDkLmKcS{EsHkDiEgFOkAqA]oELwHWmBaF_LsCmDkGqEyKyCsMr@sNdDoUhJePdDaFpBuPkIkSkJmOuGqF}DaEqE{IqQ}@QeFfCiB]wHwKg@rJ}DbLiAbA_B\\cCs@sHjBgF{AyNToFk@wIl@c[H}Fj@eFjBwC|BkEfFkBdDgH`GoGfIwPiS|@mCdBg@JkJmLg@WwDdBkIDcJxAoFbCi@tC^hDYfFcC~@sBn@gJKg^gg@xCSsCOcn@wUOsc@s@Q_DPwRMyASE"
+    },
     {
       "id": 19397306892,
       "start_date": "2026-07-21T01:59:08Z",
