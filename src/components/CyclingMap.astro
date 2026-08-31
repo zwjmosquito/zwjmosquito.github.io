@@ -13,6 +13,7 @@ const routeTotalKm: number = routeData.properties.total_km;
 const totalKm: number = stravaData.total_km ?? 0;
 const pos = positionAlongRoute(coords, totalKm);
 const progressPct = Math.min(100, (totalKm / routeTotalKm) * 100);
+const cartoBasemapKey = import.meta.env.CARTO_BASEMAP_KEY;
 
 // Nearest-waypoint lookup for human-readable caption.
 // Approximate planar distance is fine for label selection.
@@ -43,6 +44,7 @@ const nearName = nearestWaypoint();
   data-total-km={routeTotalKm}
   data-pos-lat={pos.lat}
   data-pos-lng={pos.lng}
+  data-carto-basemap-key={cartoBasemapKey}
   class="w-full h-[500px] rounded-box"
 ></div>
 
@@ -71,6 +73,7 @@ const nearName = nearestWaypoint();
   const posLat = parseFloat(el.dataset.posLat!);
   const posLng = parseFloat(el.dataset.posLng!);
   const traveledKm = parseFloat(el.dataset.traveledKm!);
+  const cartoBasemapKey = el.dataset.cartoBasemapKey!;
 
   // Build the traveled slice: walk forward until we've accumulated traveledKm.
   const R = 6371;
@@ -104,10 +107,13 @@ const nearName = nearestWaypoint();
 
   const map = L.map("cycling-map", { scrollWheelZoom: false }).setView([posLat, posLng], 3);
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {
-    attribution: "© OpenStreetMap, © CartoDB",
-    maxZoom: 18,
-  }).addTo(map);
+  L.tileLayer(
+    `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png?key=${encodeURIComponent(cartoBasemapKey)}`,
+    {
+      attribution: "© OpenStreetMap contributors, © CARTO",
+      maxZoom: 18,
+    }
+  ).addTo(map);
 
   // Full route base — faded tan, with non-road legs dashed.
   // ferry: long dashes, trail: short dashes.

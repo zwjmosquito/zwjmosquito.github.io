@@ -29,7 +29,13 @@ jobs:
           cache: npm
       - run: npm ci --legacy-peer-deps
       - run: npm test
+      - name: Verify CARTO basemap key
+        env:
+          CARTO_BASEMAP_KEY: ${{ secrets.CARTO_BASEMAP_KEY }}
+        run: test -n "$CARTO_BASEMAP_KEY"
       - run: npm run build
+        env:
+          CARTO_BASEMAP_KEY: ${{ secrets.CARTO_BASEMAP_KEY }}
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
@@ -49,7 +55,13 @@ jobs:
           node-version: "22"
           cache: npm
       - run: npm ci --legacy-peer-deps
+      - name: Verify CARTO basemap key
+        env:
+          CARTO_BASEMAP_KEY: ${{ secrets.CARTO_BASEMAP_KEY }}
+        run: test -n "$CARTO_BASEMAP_KEY"
       - run: npm run build
+        env:
+          CARTO_BASEMAP_KEY: ${{ secrets.CARTO_BASEMAP_KEY }}
       - run: npm install -g @lhci/cli@0.14.x
       - run: lhci autorun
 
